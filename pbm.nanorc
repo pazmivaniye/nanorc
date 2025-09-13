@@ -1,0 +1,6 @@
+syntax "PBM" "\.pbm$"
+color white,black ".*"
+color black,white "0\s*"
+color brightblack,black "1\s*"
+color brightblack "^\s*#.*"
+color ,white "	" "\s+$"
