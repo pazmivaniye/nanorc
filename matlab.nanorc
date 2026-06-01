@@ -1,6 +1,6 @@
 syntax "MATLAB" "\.m$"
 color white,black ".*"
-color brightblack "%.*" "\.\.\..*"
+color brightblack "(%|\.\.\.).*"
 color brightblack start="%\{" end="%\}"
 color brightwhite "^\s*%%.*"
-color ,white "	" "\s+$"
+color ,white "	|\s+$"

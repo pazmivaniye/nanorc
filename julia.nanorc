@@ -4,4 +4,4 @@ color brightwhite "\b(if|elseif|else|end|using|import|mutable|struct|export|func
 color brightwhite "@[A-Za-z_][A-Za-z_0-9]*"
 color brightblack "#.*"
 color brightwhite "^#!.+$"
-color ,white "	" "\s+$"
+color ,white "	|\s+$"

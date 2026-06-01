@@ -6,4 +6,4 @@ color brightwhite "\b(fn|use|let|mut|match|loop|break|continue|for|in|pub|struct
 #color brightblack "/\*.*\*/"
 #color brightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
 #color brightblack start="/\*" end="\*/"
-color ,white "	" "\s+$"
+color ,white "	|\s+$"

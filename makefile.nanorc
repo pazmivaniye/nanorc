@@ -1,4 +1,4 @@
 syntax "Makefile" "((^|/|\\)((GNU)?m|M)akefile[^/]*|\.(make|mk))$"
 color white,black ".*"
 color brightblack "^\s*#.*"
-color ,white "	" "\s+$"
+color ,white "	|\s+$"
