@@ -1,4 +1,4 @@
-syntax "Python" "\.py$" "(/|^)SConstruct$" "(/|^)SConscript$"
+syntax "Python" "(\.py|(^|/|\\)SCons(truct|cript))$"
 color white,black ".*"
 color brightwhite "\b(assert|break|class|continue|del|finally|global|lambda|pass|yield|in|is|not|or|and|return|try|raise|except|with|self|def|class|import|as|for|while|if|elif|else|from|None|True|False|_)\b" "\b__[A-Za-z0-9_]+__\b"
 color brightwhite "^\s*@[A-Za-z_][A-Za-z_0-9]*"
