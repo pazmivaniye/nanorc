@@ -1,0 +1,7 @@
+syntax "Powershell" "\.(ps([cdm]?1|1xml|[rs]c)|cdxml)$"
+color white,black ".*"
+color brightblack "(^|\s)#($|\s.*)"
+color brightblack "<#.*#>"
+color brightblack "<#([^#]*|[^#]*#[^>]*)"
+color brightblack start="<#" end="#>"
+color ,white "	|\s+$"
