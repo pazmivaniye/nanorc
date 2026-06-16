@@ -1,4 +1,4 @@
-syntax "LaTeX" "\.(tex|cls|sty|bib)$"
+syntax "LaTeX" "\.(tex|cls|sty|bib|bst)$"
 color white,black ".*"
 color brightwhite "\\([A-Za-z%@]*|\[|\]|\"|~|'|\^|`|#|=|\.|!|\||;|,|:)"
 color brightwhite "\\left[\([\<\|.]|\\middle[\|.]|\\right([\)\>\|.]|\])"
