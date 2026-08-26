@@ -1,0 +1,6 @@
+syntax "INI" "\.(ini|conf|gitconfig|git/config)$"
+header "^\s*\[[a-z]+( \"[a-z]+\")?\]\s*([#;].*)?$"
+color white,black ".*"
+color brightwhite "^\s*\[[a-z]+( \"[a-z]+\")?\]\s*([#;].*)?$"
+color brightblack "[#;].*$"
+color ,white "	|\s+$"
