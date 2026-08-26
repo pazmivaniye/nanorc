@@ -1,6 +1,6 @@
 syntax "NASM" "\.s$"
 color white,black ".*"
-color brightwhite "\b([sS][eE][cC][tT][iI][oO][nN]|[gG][lL][oO][bB][aA][lL]|[iI][nN][cC][bB][iI][nN])\b"
-color white,black "\$[A-Za-z_.?][A-Za-z0-9_$#@~.?]*\b"
+icolor brightwhite "\b(section|global|incbin)\b"
+icolor white,black "\$[a-z_.?][a-z0-9_$#@~.?]*\b"
 color brightblack ";.*"
 color ,white "	|\s+$"

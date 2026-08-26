@@ -1,5 +1,6 @@
-syntax "TOML" "\.toml$"
+syntax "TOML" "\.(toml|(git)?conf(ig)?)$" "config"
+header "^\s*\[.*\]\s*(#.*)?$"
 color white,black ".*"
-color brightwhite "\[(package|lib|dependencies)\]"
+color brightwhite "^\s*\[.*\]\s*(#.*)?$"
 color brightblack "#.*$"
 color ,white "	|\s+$"

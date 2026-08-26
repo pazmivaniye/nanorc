@@ -1,0 +1,3 @@
+syntax "JSON" "\.json$"
+color white,black ".*"
+color ,white "	|\s+$"

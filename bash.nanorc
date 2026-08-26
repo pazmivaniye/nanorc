@@ -1,4 +1,5 @@
 syntax "Bash" "(\.sh|(^|/|\\)\.([^.]*profile|bash(rc|_login|_logout))|inputrc)$"
+header "^#!.*(ba|z)sh\b"
 color white,black ".*"
 color brightblack "^\s*#.*"
 color brightwhite "^#!.+$"

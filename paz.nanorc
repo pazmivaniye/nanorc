@@ -1,4 +1,5 @@
 syntax "PAZ" "\.paz$"
+header "^#!.*paz\b"
 color white,black ".*"
 color brightwhite "\b(import|extern|namespace|return|class|with|and|or|for|if|while|try|catch|throw|else|true|false|in|local|static|const|auto|self|cast|from)\b"
 color brightblack "#.*"
