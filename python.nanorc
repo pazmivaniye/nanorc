@@ -1,4 +1,4 @@
-syntax "Python" "(\.py|(^|/|\\)SCons(truct|cript))$"
+syntax "Python" "(\.pyi?|(^|/|\\)SCons(truct|cript))$"
 header "^#!.*python[0-9]*\b"
 comment "#"
 color white,black ".*"

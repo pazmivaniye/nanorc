@@ -1,4 +1,4 @@
-syntax "INI" "\.(ini|conf|gitconfig|git/config)$"
+syntax "INI" "\.(ini|conf|cfg|gitconfig|git/config)$"
 header "^\s*\[[a-z]+( \"[a-z]+\")?\]\s*([#;].*)?$"
 comment "#"
 color white,black ".*"
