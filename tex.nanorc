@@ -1,5 +1,6 @@
 syntax "TeX" "\.(tex|cls|sty|bib|bst)$"
 header "^\s*\\documentclass[{%]"
+comment "%"
 color white,black ".*"
 icolor brightwhite "\\([a-z%@]+|[[\"~'^`#=.!|;,:]|\])"
 color brightwhite "\\left[([<|.]|\\middle[|.]|\\right([)>|.]|\])"

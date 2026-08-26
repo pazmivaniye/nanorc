@@ -1,3 +1,4 @@
 syntax "default"
+comment ""
 color white,black ".*"
 color ,white "	|\s+$"

@@ -1,4 +1,5 @@
 syntax "Erlang" "\.erl$"
+comment "%"
 color white,black ".*"
 color brightblack "%.*"
 color ,white "	|\s+$"

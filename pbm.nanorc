@@ -1,4 +1,5 @@
 syntax "PBM" "\.pbm$"
+comment "#"
 color white,black ".*"
 color black,white "0\s*"
 color brightblack,black "1\s*"

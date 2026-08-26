@@ -1,4 +1,5 @@
 syntax "MATLAB" "\.m$"
+comment "%"
 color white,black ".*"
 color brightblack "(%|\.\.\.).*"
 color brightblack start="%\{" end="%\}"

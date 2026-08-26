@@ -1,4 +1,5 @@
 syntax "Metal" "\.metal$"
+comment "//"
 color white,black ".*"
 color brightwhite "\b(float|double|bool|char|int|short|long|sizeof|enum|void|static|const|struct|union|typedef|extern|(un)?signed|inline)\b"
 color brightwhite "\b(class|namespace|template|public|protected|private|typename|this|friend|virtual|using|mutable|volatile|register|explicit|false|true)\b"

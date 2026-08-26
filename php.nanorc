@@ -1,4 +1,5 @@
 syntax "PHP" "\.php$"
+comment "//"
 color white,black ".*"
 color brightwhite "</?[^[:space:]\"'>/=]+|[/?]?>"
 color brightwhite "\b(echo|if|else(if)?|function|include(_once)?|require(_once)?|return|echo|for(each)?|global|as|continue|break)\b"

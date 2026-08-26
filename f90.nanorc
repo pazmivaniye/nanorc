@@ -1,4 +1,5 @@
-syntax "Fortran" "\.f90$"
+syntax "F90" "\.f90$"
+comment "!"
 color white,black ".*"
 color brightwhite "\b(subroutine|implicit|if|else|else\s*if|end\s*(if|subroutine|do)|do|return|none|call|real|integer|intent|continue|go\s*to|dimension)\b"
 color brightblack "!.*"

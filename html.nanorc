@@ -1,4 +1,5 @@
 syntax "HTML" "\.html?$"
+comment "<!--|-->"
 color white,black ".*"
 color brightwhite "</?[^[:space:]\"'>/=]+|/?>"
 color brightblack start="<!--" end="-->"

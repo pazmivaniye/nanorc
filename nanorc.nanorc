@@ -1,5 +1,6 @@
 syntax "NanoRC" "\bnanorc$"
+comment "#"
 color white,black ".*"
-color brightwhite "^((un)?(set|bind)|include|syntax|i?color|header)\b"
+color brightwhite "^((un)?(set|bind)|include|syntax|i?color|header|comment)\b"
 color brightblack "^\s*#.*"
 color ,white "	|\s+$"
