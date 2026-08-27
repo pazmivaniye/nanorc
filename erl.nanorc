@@ -1,5 +1,8 @@
 syntax "Erlang" "\.erl$"
+header "^#!.*escript\b"
 comment "%"
 color white,black ".*"
+color brightwhite "\b(after|and(also)?|b(and|not|or|sl|sr|xor)|begin|case|catch|cond|div|else|end|fun|if|let|maybe|not|of|or(else)?|receive|rem|try|when|xor)\b"
 color brightblack "%.*"
+color brightwhite "^#!.*escript\b.*"
 color ,white "	|\s+$"
