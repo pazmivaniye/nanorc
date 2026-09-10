@@ -1,0 +1,7 @@
+syntax "YAML" "\.yaml$"
+comment "#"
+color white,black ".*"
+icolor brightwhite "^\s*(-\s+)?[a-z_0-9.\-]+:(\s|(\s+[|>]\s*)?$)"
+color white,black "^\s*-\s+|:(\s|$)"
+color brightblack "(^|\s)#.*"
+color ,white "	|\s+$"
