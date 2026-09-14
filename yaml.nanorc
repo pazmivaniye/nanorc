@@ -1,4 +1,4 @@
-syntax "YAML" "\.yaml$"
+syntax "YAML" "\.ya?ml$"
 comment "#"
 color white,black ".*"
 icolor brightwhite "^\s*(-\s+)?[a-z_0-9.\-]+:(\s|(\s+[|>]\s*)?$)"
