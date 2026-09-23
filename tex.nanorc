@@ -1,4 +1,4 @@
-syntax "TeX" "\.(tex|cls|sty|bib|bst)$"
+syntax "TeX" "\.(tex|cls|sty|bib|bst|tikz)$"
 header "^\s*\\documentclass[{%]"
 comment "%"
 color white,black ".*"
