@@ -1,5 +1,9 @@
 syntax "Makefile" "((^|/|\\)((GNU)?m|M)akefile[^/]*|\.(make|mk))$"
 comment "#"
 color white,black ".*"
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "^\s*#.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

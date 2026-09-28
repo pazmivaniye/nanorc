@@ -1,7 +1,14 @@
 syntax "PBM" "\.pbm$"
 comment "#"
 color white,black ".*"
+
+# Values.
 color black,white "0\s*"
 color brightblack,black "1\s*"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "^\s*#.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

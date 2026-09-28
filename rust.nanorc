@@ -1,9 +1,17 @@
 syntax "Rust" "\.rs$"
 comment "//"
 color white,black ".*"
-color brightwhite "\b(fn|use|let|mut|match|loop|break|continue|for|in|pub|struct|impl|where|self|else|as|extern|crate|trait)\b"
+
+# Reserved words.
+color brightwhite "\b(fn|use|let|mut|match|loop|break|continue|for|in|pub)\b"
+color brightwhite "\b(struct|impl|where|self|else|as|extern|crate|trait)\b"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "//.*"
 color brightblack "/\*.*\*/"
 color brightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
 color brightblack start="/\*" end="\*/"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

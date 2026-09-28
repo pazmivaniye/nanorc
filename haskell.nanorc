@@ -2,13 +2,36 @@ syntax "Haskell" "(\.hs|\bcabal/config)$"
 header "^(#!.*runhaskell\b|\s*\{-#)"
 comment "--"
 color white,black ".*"
-color brightwhite "\b(as|case|class|data(\s+(family|instance))?|default|deriving(\s+instance)?|m?do|else|for(all|eign)|hiding|if|import|in(fix[lr]?|stance)?|let|module|newtype|of|proc|qualified|rec|then|type(\s+(family|instance))?|where)\b"
-color white,black "\b(as|case|class|data(\s+(family|instance))?|default|deriving(\s+instance)?|m?do|else|for(all|eign)|hiding|if|import|in(fix[lr]?|stance)?|let|module|newtype|of|proc|qualified|rec|then|type(\s+(family|instance))?|where)'"
-color white,black "'(as|case|class|data(\s+(family|instance))?|default|deriving(\s+instance)?|m?do|else|for(all|eign)|hiding|if|import|in(fix[lr]?|stance)?|let|module|newtype|of|proc|qualified|rec|then|type(\s+(family|instance))?|where)\b"
+
+# Reserved words.
+color brightwhite "\b(as|case|class|data(\s+(family|instance))?|default)\b"
+color brightwhite "\b(deriving(\s+instance)?|m?do|else|for(all|eign)|hiding)\b"
+color brightwhite "\b(if|import|in(fix[lr]?|stance)?|let|module|newtype|of)\b"
+color brightwhite "\b(proc|qualified|rec|then|type(\s+(family|instance))?)\b"
+color brightwhite "\bwhere\b"
+color white,black "\b(as|case|class|data(\s+(family|instance))?|default)'"
+color white,black "\b(deriving(\s+instance)?|m?do|else|for(all|eign)|hiding)'"
+color white,black "\b(if|import|in(fix[lr]?|stance)?|let|module|newtype|of)'"
+color white,black "\b(proc|qualified|rec|then|type(\s+(family|instance))?)'"
+color white,black "\bwhere'"
+color white,black "'(as|case|class|data(\s+(family|instance))?|default)\b"
+color white,black "'(deriving(\s+instance)?|m?do|else|for(all|eign)|hiding)\b"
+color white,black "'(if|import|in(fix[lr]?|stance)?|let|module|newtype|of)\b"
+color white,black "'(proc|qualified|rec|then|type(\s+(family|instance))?)\b"
+color white,black "'where\b"
+
+# Preprocessor macros.
 color brightwhite "\{-# [A-Z_0-9]+"
 color white,black "\{-#"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "\{-\s.*\s-\}"
 color brightblack start="\{-(\s[^\}]*)?$" end="^([^\{]*\s)?-\}"
 color brightblack "--.*"
+
+# Shebangs.
 color brightwhite "^#!.*runhaskell\b.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

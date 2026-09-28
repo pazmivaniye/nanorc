@@ -58,7 +58,9 @@ color brightwhite "\b(str(uct)?|tuple|union|void|zip)\b"
 # Preprocessor macros.
 color brightwhite "^\s*(DEF|IF|ELIF|ELSE)\b"
 
+color black,white "[^ -~]"
+
 # Comments.
 color brightblack "(^|\s)#.*"
 
-color ,white "	|\s+$"
+color ,white "\s+$"

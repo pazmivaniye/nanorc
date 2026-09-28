@@ -1,7 +1,14 @@
 syntax "YAML" "\.(ya?ml|cff)$"
 comment "#"
 color white,black ".*"
+
+# Headings.
 icolor brightwhite "^\s*(-\s+)?[a-z_0-9.\-]+:(\s|(\s+[|>]\s*)?$)"
 color white,black "^\s*-\s+|:(\s|$)"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "(^|\s)#.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

@@ -2,9 +2,15 @@ syntax "Powershell" "\.(ps([cdm]?1|1xml|[rs]c)|cdxml)$"
 header "^#!.*powershell\b"
 comment "<#|#>"
 color white,black ".*"
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "(^|\s)#($|\s.*)"
 color brightblack "<#.*#>"
 color brightblack "<#([^#]*|[^#]*#[^>]*)"
 color brightblack start="<#" end="#>"
+
+# Shebangs.
 color brightwhite "^#!.*powershell\b.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

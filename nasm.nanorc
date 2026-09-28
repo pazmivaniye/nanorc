@@ -1,7 +1,14 @@
 syntax "NASM" "\.s$"
 comment ";"
 color white,black ".*"
+
+# Reserved words.
 icolor brightwhite "\b(section|global|incbin)\b"
 icolor white,black "\$[a-z_.?][a-z0-9_$#@~.?]*\b"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack ";.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

@@ -44,10 +44,12 @@ color brightwhite "^\s*match\b"
 # Decorators.
 icolor brightwhite "^\s*@[a-z_][a-z_0-9]*"
 
+color black,white "[^ -~]"
+
 # Comments.
 color brightblack "(^|\s)#.*"
 
 # Shebangs.
 color brightwhite "^#!.*python[0-9]*\b.*"
 
-color ,white "	|\s+$"
+color ,white "\s+$"

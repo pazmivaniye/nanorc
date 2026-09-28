@@ -2,7 +2,17 @@ syntax "Erlang" "\.erl$"
 header "^#!.*escript\b"
 comment "%"
 color white,black ".*"
-color brightwhite "\b(after|and(also)?|b(and|not|or|sl|sr|xor)|begin|case|catch|cond|div|else|end|fun|if|let|maybe|not|of|or(else)?|receive|rem|try|when|xor)\b"
+
+# Reserved words.
+color brightwhite "\b(after|and(also)?|b(and|not|or|sl|sr|xor)|begin|case)\b"
+color brightwhite "\b(catch|cond|div|else|end|fun|if|let|maybe|not|of)\b"
+color brightwhite "\b(or(else)?|receive|rem|try|when|xor)\b"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "%.*"
+
+# Shebangs.
 color brightwhite "^#!.*escript\b.*"
-color ,white "	|\s+$"
+color ,white "\s+$"

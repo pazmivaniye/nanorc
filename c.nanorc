@@ -1,19 +1,36 @@
 syntax "C" "\.((c(c|pp|xx)?|C)|(h(h|pp|xx)?|H)|ii?|def)$"
 comment "//"
 color white,black ".*"
-color brightwhite "\b(float|double|bool|char|wchar_t|int|short|long|sizeof|enum|void|static|const|struct|union|typedef|extern|(un)?signed|inline)\b"
-color brightwhite "\b(class|namespace|template|public|protected|private|typename|this|friend|virtual|using|mutable|volatile|register|explicit|false|true)\b"
+
+# Reserved words."
+color brightwhite "\b(float|double|bool|char|wchar_t|int|short|long|sizeof)\b"
+color brightwhite "\b(enum|void|static|const|struct|union|typedef|extern)\b"
+color brightwhite "\b((un)?signed|inline)\b"
+color brightwhite "\b(class|namespace|template|public|protected|private)\b"
+color brightwhite "\b(typename|this|friend|virtual|using|mutable|volatile)\b"
+color brightwhite "\b(register|explicit|false|true)\b"
 color brightwhite "\b(for|if|while|do|else|case|default|switch)\b"
 color brightwhite "\b(try|throw|catch|operator|new|delete|errno)\b"
 color brightwhite "\b((const|dynamic|reinterpret|static)(_pointer)?_cast)\b"
-color brightwhite "\b(alignas|alignof|asm|auto|compl|concept|constexpr|decltype|export|noexcept|nullptr|requires|static_assert|thread_local|typeid)\b"
-color brightwhite "\b(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|xor|xor_eq)\b"
+color brightwhite "\b(alignas|alignof|asm|auto|compl|concept|constexpr)\b"
+color brightwhite "\b(decltype|export|noexcept|nullptr|requires)\b"
+color brightwhite "\b(static_assert|thread_local|typeid)\b"
+color brightwhite "\b(and|and_eq|bitand|bitor|compl|not|not_eq|or|or_eq|xor)\b"
+color brightwhite "\bxor_eq\b"
 color brightwhite "\b(goto|continue|break|return)\b"
 icolor brightwhite "[a-z_0-9]*__[a-z_0-9]*"
 color brightwhite "\b_[A-Z][A-Za-z_0-9]*"
-color brightwhite "^\s*#(define|if|endif|else|elif|ifdef|ifndef|undef|include|pragma|error)\b"
+
+# Preprocessor macros.
+color brightwhite "^\s*#(define|if|endif|else|elif|ifdef|ifndef|undef)\b"
+color brightwhite "^\s*#(include|pragma|error)\b"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "//.*"
 color brightblack "/\*.*\*/"
 color brightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
 color brightblack start="/\*" end="\*/"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

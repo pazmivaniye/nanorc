@@ -2,6 +2,13 @@ syntax "TOML" "\.toml$"
 header "^\s*\[+[a-z_0-9 \"'\-]+(\.[a-z_0-9 \"'\-]+)*\]+\s*(#.*)?$"
 comment "#"
 color white,black ".*"
+
+# Headings.
 color brightwhite "^\s*\[+[a-z_0-9 \"'\-]+(\.[a-z_0-9 \"'\-]+)*\]+\s*(#.*)?$"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "(^|\s)#.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

@@ -1,6 +1,15 @@
 syntax "F90" "\.f90$"
 comment "!"
 color white,black ".*"
-color brightwhite "\b(subroutine|implicit|if|else|else\s*if|end\s*(if|subroutine|do)|do|return|none|call|real|integer|intent|continue|go\s*to|dimension)\b"
+
+# Reserved words.
+color brightwhite "\b(subroutine|implicit|if|else|else\s*if)\b"
+color brightwhite "\b(end\s*(if|subroutine|do)|do|return|none|call|real)\b"
+color brightwhite "\b(integer|intent|continue|go\s*to|dimension)\b"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "!.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

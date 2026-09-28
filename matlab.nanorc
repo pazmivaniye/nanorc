@@ -1,7 +1,13 @@
 syntax "MATLAB" "\.m$"
 comment "%"
 color white,black ".*"
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "(%|\.\.\.).*"
 color brightblack start="%\{" end="%\}"
+
+# Section headings.
 color brightwhite "^\s*%%.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

@@ -2,8 +2,19 @@ syntax "Julia" "\.jl$"
 header "^#!.*julia\b"
 comment "#"
 color white,black ".*"
-color brightwhite "\b(if|elseif|else|end|using|import|mutable|struct|export|function|for|return|while|in|undef|true|false|break|continue)\b"
+
+# Reserved words.
+color brightwhite "\b(if|elseif|else|end|using|import|mutable|struct|export)\b"
+color brightwhite "\b(function|for|return|while|in|undef|true|false|break)\b"
+color brightwhite "\bcontinue\b"
 icolor brightwhite "@[a-z_][a-z_0-9]*"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack "(^|\s)#.*"
+
+# Shebangs.
 color brightwhite "^#!.*julia\b.*"
-color ,white "	|\s+$"
+
+color ,white "\s+$"

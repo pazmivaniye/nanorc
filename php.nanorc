@@ -1,12 +1,23 @@
 syntax "PHP" "\.php$"
 comment "//"
 color white,black ".*"
+
+# Tags.
 color brightwhite "</?[^[:space:]\"'>/=]+|[/?]?>"
-color brightwhite "\b(echo|if|else(if)?|function|include(_once)?|require(_once)?|return|echo|for(each)?|global|as|continue|break)\b"
-color brightwhite "\b([tT][rR][uU][eE]|[fF][aA][lL][sS][eE])\b"
+
+# Reserved words.
+color brightwhite "\b(echo|if|else(if)?|function|include(_once)?)\b"
+color brightwhite "\b(require(_once)?|return|echo|for(each)?|global|as)\b"
+color brightwhite "\b(continue|break)\b"
+icolor brightwhite "\b(true|false)\b"
+
+color black,white "[^ -~]"
+
+# Comments.
 color brightblack start="<!--" end="-->"
 color brightblack "//.*"
 color brightblack "/\*.*\*/"
 color brightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
 color brightblack start="/\*" end="\*/"
-color ,white "	|\s+$"
+
+color ,white "\s+$"
