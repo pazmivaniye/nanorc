@@ -3,8 +3,15 @@
 import re
 import sys
 
-pattern0 = '^syntax "(default|[A-Za-z_0-9-]+" ".+)"$'
-pattern1 = '^color ,white "\\\\s\\+\\$"$'
+firstLine = '^syntax "(default|[A-Za-z_0-9-]+" ".+)"$'
+secondLine = '^header ".+"$'
+thirdLine = '^comment ".*"$'
+fourthLine = 'color white,black ".*"'
+charLine = 'color black,white "[^ -~]"'
+bodyLine = '^i?color ((bright)?(white|black))?(,(white|black))? (".*"|start=".'\
+    '*" end=".*")$'
+commentLine = '^i?color brightblack ".*"$'
+lastLine = 'color ,white "\\s+$"'
 
 def cout(msg: str) -> None:
     print(msg, flush = True)
@@ -29,17 +36,63 @@ def main(args: list[str] | None = None) -> int:
         if verbose:
             cout('Checking "%s"'%(path))
         with open(path) as inFile:
-            num = 0
-            for line in inFile:
-                num += 1
-                line = line.rstrip('\n')
-                if num == 1 and not re.match(pattern0, line):
-                    failed = True
-                    cerr('%s:%i'%(path, num))
-                lastLine = line
-            if not re.match(pattern1, lastLine):
+            lines = inFile.read().splitlines()
+            numLines = len(lines)
+            if numLines < 4:
                 failed = True
-                cerr('%s:%i'%(path, num))
+                cerr('%s:%i: File is too short.'%(path, numLines))
+                continue
+            if not re.match(firstLine, lines[0]):
+                failed = True
+                cerr('%s:%i: Pattern mismatch.'%(path, 1))
+                continue
+            headerLen = 1
+            for i in range(1, min(4, numLines)):
+                if lines[i] == fourthLine:
+                    headerLen = i + 1
+                    break
+            if headerLen < 2:
+                failed = True
+                cerr('%s:%i: Missing required header lines.'%(path, headerLen))
+                continue
+            if headerLen == 4:
+                if not re.match(secondLine, lines[1]):
+                    failed = True
+                    cerr('%s:%i: Pattern mismatch.'%(path, 2))
+                    continue
+                if not re.match(thirdLine, lines[2]):
+                    failed = True
+                    cerr('%s:%i: Pattern mismatch.'%(path, 3))
+                    continue
+            if headerLen == 3:
+                if not re.match(secondLine, lines[1]) and not re.match(
+                        thirdLine, lines[1]):
+                    failed = True
+                    cerr('%s:%i: Pattern mismatch.'%(path, 2))
+                    continue
+            if charLine not in lines:
+                failed = True
+                cerr('%s:%i: Missing non-ASCII character highlighting rule.'%(
+                    path, numLines))
+                continue
+            charRule = lines.index(charLine)
+            for i in range(headerLen, numLines - 1):
+                if not lines[i] or lines[i][0] == '#':
+                    continue
+                if not re.match(bodyLine, lines[i]):
+                    failed = True
+                    cerr('%s:%i: Pattern mismatch.'%(path, i + 1))
+                    break
+                if re.match(commentLine, lines[i]) and i < charRule:
+                    failed = True
+                    cerr('%s:%i: Non-ASCII character highlighting rule comes af'
+                        'ter first comment highlighting rule.'%(path, i + 1))
+                    break
+            if failed:
+                continue
+            if lines[-1] != lastLine:
+                failed = True
+                cerr('%s:%i: Pattern mismatch.'%(path, numLines))
     return int(failed)
 
 if __name__ == '__main__':
