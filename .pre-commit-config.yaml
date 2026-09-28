@@ -6,6 +6,8 @@ repos:
       - id: end-of-file-fixer
       - id: check-added-large-files
       - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
       - id: check-yaml
   - repo: https://github.com/pazmivaniye/pre-commit-hooks
     rev: 3c741d565bea8ed8ce0c3beb6cbe800c5505cee7
@@ -13,3 +15,19 @@ repos:
       - id: check-chars
       - id: check-filenames
       - id: check-line-length
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        description: Run static code analyzer
+        entry: mypy
+        language: system
+        types:
+          - python
+        args:
+          - --strict
+      - id: check-nanorc-files
+        name: check nanorc files
+        entry: ./check_nanorc.py
+        language: system
+        files: \.nanorc$
