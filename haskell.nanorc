@@ -20,8 +20,12 @@ color white,black "'(if|import|in(fix[lr]?|stance)?|let|module|newtype|of)\b"
 color white,black "'(proc|qualified|rec|then|type(\s+(family|instance))?)\b"
 color white,black "'where\b"
 
-# Preprocessor macros.
-color brightwhite "\{-# [A-Z_0-9]+"
+# Pragmas.
+color brightwhite "\{-#\s+(COLUMN|COMPLETE|CONLIKE|DEPRECATED|INCLUDE)\b"
+color brightwhite "\{-#\s+(INCOHERENT|INLINE?ABLE|LANGUAGE|LINE|MINIMAL)\b"
+color brightwhite "\{-#\s+((NO)?INLINE|(NO)?UNPACK|OPAQUE|OPTIONS_GHC)\b"
+color brightwhite "\{-#\s+(OVERLAP(PABLE|PING|S)|RULES|SOURCE)\b"
+color brightwhite "\{-#\s+(SPECIALI[SZ]E(\s+(NO)?INLINE)?|WARNING)\b"
 color white,black "\{-#"
 
 color black,white "[^ -~]"
