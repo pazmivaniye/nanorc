@@ -26,6 +26,7 @@ repos:
           - python
         args:
           - --strict
+          - --follow-untyped-imports
       - id: check-nanorc-files
         name: check nanorc files
         entry: ./check_nanorc.py
