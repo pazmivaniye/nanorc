@@ -7,9 +7,9 @@ import re
 import sys
 from pathlib import Path
 
-commentColor = 'green'
-keywordColor = 'brightcyan'
-warningColor = 'yellow'
+commentColor = 'blue'
+keywordColor = 'brightyellow'
+warningColor = 'green'
 
 swaps = {
     'brightblack': commentColor,
