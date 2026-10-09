@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
-'''Change Nano color scheme from B&W to color'''
+"""Change Nano color scheme from B&W to color"""
+
+__all__ = ['main']
 
 import re
 import sys
 from pathlib import Path
 
+commentColor = 'green'
+keywordColor = 'brightcyan'
+warningColor = 'yellow'
+
 swaps = {
-    'brightblack': 'green',
-    'brightwhite': 'brightgreen',
-    'black,white': 'black,green',
-    ',white': ',green',
+    'brightblack': commentColor,
+    'brightwhite': keywordColor,
+    'black,white': 'black,' + warningColor,
+    ',white': ',' + warningColor,
 }
 
 allPattern = 'i?color (' + '|'.join(n for n in swaps) + ') '

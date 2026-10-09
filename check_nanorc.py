@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-'''Check NanoRC files for consistency'''
+"""Check NanoRC files for consistency"""
+
+__all__ = ['main']
 
 import re
 import sys

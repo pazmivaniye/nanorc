@@ -10,7 +10,7 @@ repos:
       - id: check-shebang-scripts-are-executable
       - id: check-yaml
   - repo: https://github.com/pazmivaniye/pre-commit-hooks
-    rev: 544f3d7f5e12c5fac42a1ae653b340174b36b50b
+    rev: 9069d8304a237c3f7ef0da325ed5763c3681ba55
     hooks:
       - id: check-chars
       - id: check-filenames
