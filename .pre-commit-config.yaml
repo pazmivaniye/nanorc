@@ -10,11 +10,12 @@ repos:
       - id: check-shebang-scripts-are-executable
       - id: check-yaml
   - repo: https://github.com/pazmivaniye/pre-commit-hooks
-    rev: 3c741d565bea8ed8ce0c3beb6cbe800c5505cee7
+    rev: 544f3d7f5e12c5fac42a1ae653b340174b36b50b
     hooks:
       - id: check-chars
       - id: check-filenames
       - id: check-line-length
+      - id: check-python-quotes
   - repo: local
     hooks:
       - id: mypy
@@ -29,6 +30,7 @@ repos:
           - --follow-untyped-imports
       - id: check-nanorc-files
         name: check nanorc files
+        description: Check NanoRC files for consistency
         entry: ./check_nanorc.py
         language: system
         files: \.nanorc$

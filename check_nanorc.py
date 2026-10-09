@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+'''Check NanoRC files for consistency'''
 
 import re
 import sys
