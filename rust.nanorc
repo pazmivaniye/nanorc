@@ -1,4 +1,4 @@
-syntax "Rust" "\.rs$"
+syntax "rust" "\.rs$"
 comment "//"
 color white,black ".*"
 

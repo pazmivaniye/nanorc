@@ -1,4 +1,4 @@
-syntax "PBM" "\.pbm$"
+syntax "pbm" "\.pbm$"
 comment "#"
 color white,black ".*"
 

@@ -1,4 +1,4 @@
-syntax "NanoRC" "\bnanorc$"
+syntax "nanorc" "\bnanorc$"
 comment "#"
 color white,black ".*"
 

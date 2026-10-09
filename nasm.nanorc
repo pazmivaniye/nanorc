@@ -1,4 +1,4 @@
-syntax "NASM" "\.s$"
+syntax "nasm" "\.s$"
 comment ";"
 color white,black ".*"
 

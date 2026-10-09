@@ -1,4 +1,4 @@
-syntax "GLSL" "\.(frag|vert|glsl)$"
+syntax "glsl" "\.(frag|vert|glsl)$"
 comment "//"
 color white,black ".*"
 

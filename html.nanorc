@@ -1,4 +1,4 @@
-syntax "HTML" "\.html?$"
+syntax "html" "\.html?$"
 comment "<!--|-->"
 color white,black ".*"
 

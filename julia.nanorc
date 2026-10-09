@@ -1,4 +1,4 @@
-syntax "Julia" "\.jl$"
+syntax "julia" "\.jl$"
 header "^#!.*julia\b"
 comment "#"
 color white,black ".*"

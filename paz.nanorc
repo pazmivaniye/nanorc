@@ -1,4 +1,4 @@
-syntax "PAZ" "\.paz$"
+syntax "paz" "\.paz$"
 header "^#!.*paz\b"
 comment "#"
 color white,black ".*"

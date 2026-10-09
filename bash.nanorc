@@ -1,4 +1,4 @@
-syntax "Bash" "(\.sh|(^|/|\\)\.([^.]*profile|bash(rc|_login|_logout))|inputrc)$"
+syntax "bash" "(\.sh|(^|/|\\)\.([^.]*profile|bash(rc|_login|_logout))|inputrc)$"
 header "^#!.*(ba|z)sh\b"
 comment "#"
 color white,black ".*"

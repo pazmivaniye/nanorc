@@ -1,4 +1,4 @@
-syntax "PHP" "\.php$"
+syntax "php" "\.php$"
 comment "//"
 color white,black ".*"
 

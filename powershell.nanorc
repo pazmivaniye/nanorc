@@ -1,4 +1,4 @@
-syntax "Powershell" "\.(ps([cdm]?1|1xml|[rs]c)|cdxml)$"
+syntax "powershell" "\.(ps([cdm]?1|1xml|[rs]c)|cdxml)$"
 header "^#!.*powershell\b"
 comment "<#|#>"
 color white,black ".*"

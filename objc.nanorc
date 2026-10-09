@@ -1,4 +1,4 @@
-syntax "Obj-C" "\.mm$"
+syntax "objc" "\.mm$"
 comment "//"
 color white,black ".*"
 

@@ -1,4 +1,4 @@
-syntax "Cabal" "\.cabal$"
+syntax "cabal" "\.cabal$"
 header "^cabal-version:"
 comment "--"
 color white,black ".*"

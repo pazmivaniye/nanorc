@@ -1,4 +1,4 @@
-syntax "MATLAB" "\.m$"
+syntax "matlab" "\.m$"
 comment "%"
 color white,black ".*"
 color black,white "[^ -~]"

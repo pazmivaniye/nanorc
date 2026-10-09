@@ -1,4 +1,4 @@
-syntax "Haskell" "(\.hs|\bcabal/config)$"
+syntax "haskell" "(\.hs|\bcabal/config)$"
 header "^(#!.*runhaskell\b|\s*\{-#)"
 comment "--"
 color white,black ".*"

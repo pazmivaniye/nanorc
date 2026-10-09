@@ -1,4 +1,4 @@
-syntax "Metal" "\.metal$"
+syntax "metal" "\.metal$"
 comment "//"
 color white,black ".*"
 

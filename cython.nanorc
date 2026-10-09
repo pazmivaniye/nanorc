@@ -1,4 +1,4 @@
-syntax "Cython" "\.pyx$"
+syntax "cython" "\.pyx$"
 header "^\s*# cython:"
 comment "#"
 color white,black ".*"

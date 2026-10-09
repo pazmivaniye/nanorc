@@ -1,4 +1,4 @@
-syntax "C" "\.((c(c|pp|xx)?|C)|(h(h|pp|xx)?|H)|ii?|def)$"
+syntax "c" "\.((c(c|pp|xx)?|C)|(h(h|pp|xx)?|H)|ii?|def)$"
 comment "//"
 color white,black ".*"
 

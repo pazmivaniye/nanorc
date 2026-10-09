@@ -1,4 +1,4 @@
-syntax "Erlang" "\.erl$"
+syntax "erlang" "\.erl$"
 header "^#!.*escript\b"
 comment "%"
 color white,black ".*"

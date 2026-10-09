@@ -1,4 +1,4 @@
-syntax "F90" "\.f90$"
+syntax "f90" "\.f90$"
 comment "!"
 color white,black ".*"
 
