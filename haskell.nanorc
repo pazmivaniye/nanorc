@@ -31,9 +31,9 @@ color normal,normal "\{-#"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "\{-\s.*\s-\}"
-color lightblack start="\{-(\s[^\}]*)?$" end="^([^\{]*\s)?-\}"
-color lightblack "--.*"
+color italic,lightblack "\{-\s.*\s-\}"
+color italic,lightblack start="\{-(\s[^\}]*)?$" end="^([^\{]*\s)?-\}"
+color italic,lightblack "--.*"
 
 # Shebangs.
 color bold,lightwhite "^#!.*runhaskell\b.*"

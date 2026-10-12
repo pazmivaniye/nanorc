@@ -4,10 +4,10 @@ comment "<#|#>"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "(^|\s)#($|\s.*)"
-color lightblack "<#.*#>"
-color lightblack "<#([^#]*|[^#]*#[^>]*)"
-color lightblack start="<#" end="#>"
+color italic,lightblack "(^|\s)#($|\s.*)"
+color italic,lightblack "<#.*#>"
+color italic,lightblack "<#([^#]*|[^#]*#[^>]*)"
+color italic,lightblack start="<#" end="#>"
 
 # Shebangs.
 color bold,lightwhite "^#!.*powershell\b.*"

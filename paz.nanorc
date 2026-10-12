@@ -10,7 +10,7 @@ color bold,lightwhite "\b(local|static|const|auto|self|cast|from)\b"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "(^|\s)#.*"
+color italic,lightblack "(^|\s)#.*"
 
 # Shebangs.
 color bold,lightwhite "^#!.*paz\b.*"

@@ -13,6 +13,6 @@ color bold,lightwhite "\\[_%&${}#]"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "%.*"
+color italic,lightblack "%.*"
 
 color ,white "\s+$"

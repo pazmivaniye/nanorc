@@ -3,6 +3,6 @@ comment "#"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "^\s*#.*"
+color italic,lightblack "^\s*#.*"
 
 color ,white "\s+$"

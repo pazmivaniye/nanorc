@@ -3,11 +3,11 @@ comment "#"
 
 # Values.
 color black,white "0\s*"
-color lightblack,black "1\s*"
+color italic,lightblack,black "1\s*"
 
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "^\s*#.*"
+color italic,lightblack "^\s*#.*"
 
 color ,white "\s+$"

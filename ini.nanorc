@@ -8,6 +8,6 @@ color bold,lightwhite "^\s*\[[a-z]+( \"[a-z]+\")?\]\s*([#;].*)?$"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "[#;].*"
+color italic,lightblack "[#;].*"
 
 color ,white "\s+$"

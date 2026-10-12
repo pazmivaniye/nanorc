@@ -4,7 +4,7 @@ comment "#"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "(^|\s)#.*"
+color italic,lightblack "(^|\s)#.*"
 
 # Shebangs.
 color bold,lightwhite "^#!.*tclsh[0-9]*\b.*"

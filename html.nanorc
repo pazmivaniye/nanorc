@@ -7,6 +7,6 @@ color bold,lightwhite "</?[^[:space:]\"'>/=]+|/?>"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack start="<!--" end="-->"
+color italic,lightblack start="<!--" end="-->"
 
 color ,white "\s+$"

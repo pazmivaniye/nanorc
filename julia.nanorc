@@ -11,7 +11,7 @@ icolor bold,lightwhite "@[a-z_][a-z_0-9]*"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "(^|\s)#.*"
+color italic,lightblack "(^|\s)#.*"
 
 # Shebangs.
 color bold,lightwhite "^#!.*julia\b.*"

@@ -12,7 +12,7 @@ keywordColor = 'yellow'
 warningColor = 'cyan'
 
 swaps = {
-    'lightblack': commentColor,
+    'italic,lightblack': 'italic,' + commentColor,
     'bold,lightwhite': 'bold,light' + keywordColor,
     'black,white': 'black,' + warningColor,
     ',white': ',' + warningColor,

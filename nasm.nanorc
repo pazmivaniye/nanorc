@@ -8,6 +8,6 @@ icolor normal,normal "\$[a-z_.?][a-z0-9_$#@~.?]*\b"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack ";.*"
+color italic,lightblack ";.*"
 
 color ,white "\s+$"

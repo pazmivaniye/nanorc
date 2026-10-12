@@ -18,9 +18,9 @@ color bold,lightwhite "^\s*#(include|pragma|error|version|extension)\b"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "//.*"
-color lightblack "/\*.*\*/"
-color lightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
-color lightblack start="/\*" end="\*/"
+color italic,lightblack "//.*"
+color italic,lightblack "/\*.*\*/"
+color italic,lightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
+color italic,lightblack start="/\*" end="\*/"
 
 color ,white "\s+$"

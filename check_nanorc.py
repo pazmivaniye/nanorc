@@ -10,9 +10,9 @@ firstLine = 'syntax "(default|([A-Za-z_0-9-]+)" ".+)"'
 secondLine = 'header ".+"'
 thirdLine = 'comment ".*"'
 charLine = 'color black,white "[^ -~]"'
-bodyLine = 'i?color (normal|(bold,)?(light)?(white|black))?(,(normal|white|bla'\
-    'ck))? (".*"|start=".*" end=".*")'
-commentLine = 'i?color brightblack ".*"'
+bodyLine = 'i?color (normal|(bold,)?(italic,)?(light)?(white|black))?(,(normal'\
+    '|white|black))? (".*"|start=".*" end=".*")'
+commentLine = 'i?color italic,lightblack (start=".*" end=)?".*"'
 lastLine = 'color ,white "\\s+$"'
 validName = '[a-z][a-z0-9]*'
 

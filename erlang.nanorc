@@ -10,7 +10,7 @@ color bold,lightwhite "\b(of|or(else)?|receive|rem|try|when|xor)\b"
 color black,white "[^ -~]"
 
 # Comments.
-color lightblack "%.*"
+color italic,lightblack "%.*"
 
 # Shebangs.
 color bold,lightwhite "^#!.*escript\b.*"
