@@ -7,13 +7,13 @@ import re
 import sys
 from pathlib import Path
 
-commentColor = 'blue'
-keywordColor = 'brightyellow'
-warningColor = 'green'
+commentColor = 'green'
+keywordColor = 'yellow'
+warningColor = 'cyan'
 
 swaps = {
-    'brightblack': commentColor,
-    'brightwhite': keywordColor,
+    'lightblack': commentColor,
+    'bold,lightwhite': 'bold,light' + keywordColor,
     'black,white': 'black,' + warningColor,
     ',white': ',' + warningColor,
 }
@@ -27,7 +27,7 @@ def main(args: list[str] | None = None) -> int:
     if args is None:
         args = sys.argv[1:]
     if args:
-        cerr('Error: Script does not take arguments.')
+        cerr('ValueError: Script does not take arguments.')
         return 1
     dir = Path(__file__).parent
     for path in dir.glob('*.nanorc'):
@@ -35,7 +35,7 @@ def main(args: list[str] | None = None) -> int:
             with path.open() as inFile:
                 lines = inFile.read().splitlines()
         except Exception as e:
-            cerr('Error: Failed to read from "%s": %s'%(path, e))
+            cerr('%s: Failed to read from file: %s'%(type(e).__name__, e))
             return 1
         if not lines:
             cerr('Warning: File "%s" is empty.'%(path))
@@ -53,8 +53,9 @@ def main(args: list[str] | None = None) -> int:
         try:
             with path.open('w') as outFile:
                 outFile.write('\n'.join(lines))
+                outFile.write('\n')
         except Exception as e:
-            cerr('Error: Failed to write to "%s": %s'%(path, e))
+            cerr('%s: Failed to write to file: %s'%(type(e).__name__, e))
             return 1
     return 0
 

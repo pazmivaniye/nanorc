@@ -1,13 +1,12 @@
 syntax "bash" "(\.sh|(^|/|\\)\.([^.]*profile|bash(rc|_login|_logout))|inputrc)$"
 header "^#!.*(ba|z)sh\b"
 comment "#"
-color white,black ".*"
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "^\s*#.*"
+color lightblack "^\s*#.*"
 
 # Shebangs.
-color brightwhite "^#!.*(ba|z)sh\b.*"
+color bold,lightwhite "^#!.*(ba|z)sh\b.*"
 
 color ,white "\s+$"

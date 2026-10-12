@@ -1,20 +1,19 @@
 syntax "cabal" "\.cabal$"
 header "^cabal-version:"
 comment "--"
-color white,black ".*"
 
 # Conditionals.
-color brightwhite "^\s*((el)?if\s|else)$"
-color brightwhite "\b(False|True)\b"
+color bold,lightwhite "^\s*((el)?if\s|else)$"
+color bold,lightwhite "\b(False|True)\b"
 
 # Headings.
-icolor brightwhite "^(common|benchmark|executable|flag|(foreign-)?library)\b"
-icolor brightwhite "^test-suite\b"
-icolor brightwhite "^\s*[a-z_][a-z_0-9-]+:(\s|$)"
+icolor bold,lightwhite "^(common|benchmark|executable|flag)\b"
+icolor bold,lightwhite "^((foreign-)?library|test-suite)\b"
+icolor bold,lightwhite "^\s*[a-z_][a-z_0-9-]+:(\s|$)"
 
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "--.*"
+color lightblack "--.*"
 
 color ,white "\s+$"

@@ -1,17 +1,17 @@
 syntax "rust" "\.rs$"
 comment "//"
-color white,black ".*"
 
 # Reserved words.
-color brightwhite "\b(fn|use|let|mut|match|loop|break|continue|for|in|pub)\b"
-color brightwhite "\b(struct|impl|where|self|else|as|extern|crate|trait)\b"
+color bold,lightwhite "\b(fn|use|let|mut|match|loop|break|continue|for|in)\b"
+color bold,lightwhite "\b(pub|struct|impl|where|self|else|as|extern|crate)\b"
+color bold,lightwhite "\btrait\b"
 
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "//.*"
-color brightblack "/\*.*\*/"
-color brightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
-color brightblack start="/\*" end="\*/"
+color lightblack "//.*"
+color lightblack "/\*.*\*/"
+color lightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
+color lightblack start="/\*" end="\*/"
 
 color ,white "\s+$"

@@ -9,10 +9,9 @@ import sys
 firstLine = 'syntax "(default|([A-Za-z_0-9-]+)" ".+)"'
 secondLine = 'header ".+"'
 thirdLine = 'comment ".*"'
-fourthLine = 'color white,black ".*"'
 charLine = 'color black,white "[^ -~]"'
-bodyLine = 'i?color ((bright)?(white|black))?(,(white|black))? (".*"|start=".*'\
-    '" end=".*")'
+bodyLine = 'i?color (normal|(bold,)?(light)?(white|black))?(,(normal|white|bla'\
+    'ck))? (".*"|start=".*" end=".*")'
 commentLine = 'i?color brightblack ".*"'
 lastLine = 'color ,white "\\s+$"'
 validName = '[a-z][a-z0-9]*'
@@ -42,14 +41,14 @@ def main(args: list[str] | None = None) -> int:
         with open(path) as inFile:
             lines = inFile.read().splitlines()
             numLines = len(lines)
-            if numLines < 4:
+            if numLines < 3:
                 failed = True
                 cerr('%s:%i: File is too short.'%(path, numLines))
                 continue
             m = re.fullmatch(firstLine, lines[0])
             if m and len(m.groups()) == 2:
-                if m.groups()[1] is not None:
-                    name = m.groups()[1]
+                if m.group(2) is not None:
+                    name = m.group(2)
                     if not re.match(validName, name):
                         failed = True
                         cerr('%s:%i: Invalid syntax name.'%(path, 1))
@@ -69,29 +68,24 @@ def main(args: list[str] | None = None) -> int:
                 cerr('%s:%i: Pattern mismatch.'%(path, 1))
                 continue
             headerLen = 1
-            for i in range(1, min(4, numLines)):
-                if lines[i] == fourthLine:
-                    headerLen = i + 1
-                    break
+            if re.fullmatch(thirdLine, lines[1]):
+                headerLen = 2
+            elif re.fullmatch(secondLine, lines[1]):
+                headerLen = 3
+            else:
+                headerLen = 1
             if headerLen < 2:
                 failed = True
                 cerr('%s:%i: Missing required header lines.'%(path, headerLen))
                 continue
-            if headerLen == 4:
-                if not re.fullmatch(secondLine, lines[1]):
-                    failed = True
-                    cerr('%s:%i: Pattern mismatch.'%(path, 2))
-                    continue
-                if not re.fullmatch(thirdLine, lines[2]):
-                    failed = True
-                    cerr('%s:%i: Pattern mismatch.'%(path, 3))
-                    continue
-            if headerLen == 3:
-                if not re.fullmatch(secondLine, lines[1]) and not re.fullmatch(
-                        thirdLine, lines[1]):
-                    failed = True
-                    cerr('%s:%i: Pattern mismatch.'%(path, 2))
-                    continue
+            if not re.fullmatch(thirdLine, lines[headerLen - 1]):
+                failed = True
+                cerr('%s:%i: Pattern mismatch.'%(path, headerLen))
+                continue
+            if headerLen == 3 and not re.fullmatch(secondLine, lines[1]):
+                failed = True
+                cerr('%s:%i: Pattern mismatch.'%(path, 2))
+                continue
             if charLine not in lines:
                 failed = True
                 cerr('%s:%i: Missing non-ASCII character highlighting rule.'%(

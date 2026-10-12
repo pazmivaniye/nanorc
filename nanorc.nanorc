@@ -1,13 +1,13 @@
 syntax "nanorc" "\bnanorc$"
 comment "#"
-color white,black ".*"
 
 # Reserved words.
-color brightwhite "^((un)?(set|bind)|include|syntax|i?color|header|comment)\b"
+color bold,lightwhite "^((un)?(set|bind)|include|syntax|i?color|header)\b"
+color bold,lightwhite "^comment\b"
 
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "^\s*#.*"
+color lightblack "^\s*#.*"
 
 color ,white "\s+$"

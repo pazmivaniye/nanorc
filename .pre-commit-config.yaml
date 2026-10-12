@@ -15,6 +15,7 @@ repos:
       - id: check-chars
       - id: check-filenames
       - id: check-line-length
+        exclude: ^([cp]ython|toml).nanorc$
       - id: check-python-quotes
   - repo: local
     hooks:

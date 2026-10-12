@@ -1,5 +1,4 @@
 syntax "json" "\.json$"
 comment ""
-color white,black ".*"
 color black,white "[^ -~]"
 color ,white "\s+$"

@@ -1,19 +1,18 @@
 syntax "tex" "\.(tex|cls|sty|bib|bst|tikz)$"
 header "^\s*\\documentclass[{%]"
 comment "%"
-color white,black ".*"
 
 # Macros.
-icolor brightwhite "\\([a-z%@]+|[[\"~'^`#=.!|;,:]|\])"
-color brightwhite "\\left[([<|.]|\\middle[|.]|\\right([)>|.]|\])"
-icolor white,black "\\\\([a-z%@]+|[[\"~'^`#=.!|;,:]|\])"
-icolor white,black "\\[_%&${}#][a-z_0-9]+"
-color brightwhite "\\\\\*?"
-color brightwhite "\\[_%&${}#]"
+icolor bold,lightwhite "\\([a-z%@]+|[[\"~'^`#=.!|;,:]|\])"
+color bold,lightwhite "\\left[([<|.]|\\middle[|.]|\\right([)>|.]|\])"
+icolor normal,normal "\\\\([a-z%@]+|[[\"~'^`#=.!|;,:]|\])"
+icolor normal,normal "\\[_%&${}#][a-z_0-9]+"
+color bold,lightwhite "\\\\\*?"
+color bold,lightwhite "\\[_%&${}#]"
 
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "%.*"
+color lightblack "%.*"
 
 color ,white "\s+$"

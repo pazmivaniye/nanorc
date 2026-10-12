@@ -1,14 +1,13 @@
 syntax "yaml" "\.(ya?ml|cff)$"
 comment "#"
-color white,black ".*"
 
 # Headings.
-icolor brightwhite "^\s*(-\s+)?[a-z_0-9.\-]+:(\s|(\s+[|>]\s*)?$)"
-color white,black "^\s*-\s+|:(\s|$)"
+icolor bold,lightwhite "^\s*(-\s+)?[a-z_0-9.\-]+:(\s|(\s+[|>]\s*)?$)"
+color normal,normal "^\s*-\s+|:(\s|$)"
 
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "(^|\s)#.*"
+color lightblack "(^|\s)#.*"
 
 color ,white "\s+$"

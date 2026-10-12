@@ -1,13 +1,12 @@
 syntax "tcl" "(\.tcl|(^|/|\\)Portfile)$"
 header "^#!.*tclsh[0-9]*\b"
 comment "#"
-color white,black ".*"
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "(^|\s)#.*"
+color lightblack "(^|\s)#.*"
 
 # Shebangs.
-color brightwhite "^#!.*tclsh[0-9]*\b.*"
+color bold,lightwhite "^#!.*tclsh[0-9]*\b.*"
 
 color ,white "\s+$"

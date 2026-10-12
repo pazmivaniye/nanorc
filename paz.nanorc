@@ -1,19 +1,18 @@
 syntax "paz" "\.paz$"
 header "^#!.*paz\b"
 comment "#"
-color white,black ".*"
 
 # Reserved words.
-color brightwhite "\b(import|extern|namespace|return|class|with|and|or|for)\b"
-color brightwhite "\b(if|while|try|catch|throw|else|true|false|in|local)\b"
-color brightwhite "\b(static|const|auto|self|cast|from)\b"
+color bold,lightwhite "\b(import|extern|namespace|return|class|with|and|or)\b"
+color bold,lightwhite "\b(for|if|while|try|catch|throw|else|true|false|in)\b"
+color bold,lightwhite "\b(local|static|const|auto|self|cast|from)\b"
 
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack "(^|\s)#.*"
+color lightblack "(^|\s)#.*"
 
 # Shebangs.
-color brightwhite "^#!.*paz\b.*"
+color bold,lightwhite "^#!.*paz\b.*"
 
 color ,white "\s+$"

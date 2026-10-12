@@ -1,13 +1,12 @@
 syntax "html" "\.html?$"
 comment "<!--|-->"
-color white,black ".*"
 
 # Tags.
-color brightwhite "</?[^[:space:]\"'>/=]+|/?>"
+color bold,lightwhite "</?[^[:space:]\"'>/=]+|/?>"
 
 color black,white "[^ -~]"
 
 # Comments.
-color brightblack start="<!--" end="-->"
+color lightblack start="<!--" end="-->"
 
 color ,white "\s+$"
