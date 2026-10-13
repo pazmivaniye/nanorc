@@ -1,9 +1,9 @@
 syntax "toml" "\.toml$"
-header "^\s*\[+[a-z_0-9 \"'\-]+(\.[a-z_0-9 \"'\-]+)*\]+\s*(#.*)?$"
+header "^\s*\[+[a-z_0-9 \"'/\-]+(\.[a-z_0-9 \"'/\-]+)*\]+\s*(#.*)?$"
 comment "#"
 
 # Headings.
-color bold,lightwhite "^\s*\[+[a-z_0-9 \"'\-]+(\.[a-z_0-9 \"'\-]+)*\]+\s*(#.*)?$"
+color bold,lightwhite "^\s*\[+[a-z_0-9 \"'/\-]+(\.[a-z_0-9 \"'/\-]+)*\]+\s*(#.*)?$"
 
 color black,white "[^ -~]"
 
