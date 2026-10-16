@@ -2,8 +2,8 @@ syntax "llvm" "\.ll$"
 comment ";"
 
 # Reserved words.
-color bold,lightwhite "\b(add|alloca|br|call|declare|define|double|(ex|in)ternal|(extract|insert)value|eq|float|getelementptr|global|i[1-9][0-9]*|icmp|label|load|local|mul|opaque|phi|ptr|ret|[su](div|rem)|store|trunc|type|void)\b"
-icolor normal,normal "[%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
+color bold,lightwhite "\b(add|align|alloca|br|call|declare|define|double|(ex|in)ternal|(extract|insert)value|eq|float|getelementptr|global|i[1-9][0-9]*|icmp|in(bounds|range)|label|load|local|mul|ne|n[su]w|opaque|phi|ptr|ret|[su](div|[gl][et]|rem)|[sz]ext|store|sub|to|trunc|type|unreachable|void)\b"
+icolor normal,normal "[%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")|^\s*[a-z_.\-][a-z_0-9.\-]*:"
 
 color black,white "[^ -~]"
 
