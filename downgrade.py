@@ -9,7 +9,8 @@ from pathlib import Path
 
 defaultLine = 'color white,black ".*"'
 gsPattern = '(un)?set guidestripe'
-lightPattern = '(i?color) (bold,)?light'
+lightPattern = '(i?color) (bold,)?(italic,)?light'
+colorPattern = '(i?color) (bold,)?(italic,)?'
 normalPattern = '(i?color) normal,normal '
 
 def getContents(path: Path) -> list[str]:
@@ -52,6 +53,10 @@ def downgradeSyntaxFile(path: Path) -> None:
         m = re.match(normalPattern, lines[i])
         if m:
             lines[i] = m.group(1) + ' white,black ' + lines[i][m.end():]
+            continue
+        m = re.match(colorPattern, lines[i])
+        if m:
+            lines[i] = m.group(1) + ' ' + lines[i][m.end():]
     dumpContents(path, lines)
 
 def cerr(msg: str) -> None:
