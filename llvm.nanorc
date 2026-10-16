@@ -1,0 +1,16 @@
+syntax "llvm" "\.ll$"
+comment ";"
+
+# Reserved words.
+color bold,lightwhite "\b(add|alloca|br|call|declare|define|double|(ex|in)ternal|(extract|insert)value|eq|float|getelementptr|global|i[1-9][0-9]*|icmp|label|load|local|mul|opaque|phi|ptr|ret|[su](div|rem)|store|trunc|type|void)\b"
+icolor normal,normal "[%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
+
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack ";.*"
+color italic,lightblack "/\*.*\*/"
+color italic,lightblack "/\*([^\*]*|[^\*]*\*[^/]*)"
+color italic,lightblack start="/\*" end="\*/"
+
+color ,white "\s+$"
