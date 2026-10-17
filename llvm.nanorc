@@ -5,13 +5,13 @@ comment ";"
 color bold,lightwhite "\b([bi][1-9][0-9]*|label|ptr|token|type|void)\b"
 
 # Instructions.
-color bold,lightwhite "\b(add|(addrspace|bit)cast|(addr|int)toptr|alloca|(indirect|call)?br|call|de(clare|fine)|(extract|insert)(element|value)|f(neg|add|sub|mul|div|rem|cmp|ptrunc|pext)|getelementptr|icmp|load|mul|phi|ptrto(addr|int)|ret|[su](div|rem|itofp)|select|[sz]ext|store|sub|switch|trunc|unreachable|xor)\b"
+color bold,lightwhite "\b(add|and|(addrspace|bit)cast|(addr|int)toptr|alloca|bit(extract|insert)|(indirect|call)?br|call|de(clare|fine)|(extract|insert)(element|value)|f(neg|add|sub|mul|div|rem|cmp|ptrunc|pext)|getelementptr|icmp|load|mul|x?or|phi|ptrto(addr|int)|ret|[su](div|rem|itofp)|select|[sz]ext|store|sub|switch|trunc|unreachable)\b"
 
 # Constants.
 color bold,lightwhite "\b(inf|false|none|null|opaque|[sq]?nan|true|undef)\b"
 
 # Attributes.
-color bold,lightwhite "\b(align|captures|constant|(ex|in)ternal|eq|global|in(bounds|range|reg)|local|ne|nneg|no(alias|unwind)|(no|sign|zero)ext|nonnull|n[su]w|private|range|(read|write)only|samesign|[su][gl][et]|to|unnamed_addr)\b"
+color bold,lightwhite "\b(align|captures|constant|disjoint|(ex|in)ternal|eq|global|in(bounds|range|reg)|local|ne|nneg|no(alias|unwind)|(no|sign|zero)ext|nonnull|n[su]w|private|range|(read|write)only|samesign|[su][gl][et]|to|unnamed_addr)\b"
 
 icolor normal,normal "[%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
 
