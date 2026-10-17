@@ -1,8 +1,18 @@
 syntax "llvm" "\.ll$"
 comment ";"
 
-# Reserved words.
-color bold,lightwhite "\b(add|align|alloca|br|call|captures|constant|declare|define|double|(ex|in)ternal|(extract|insert)value|eq|float|getelementptr|global|i[1-9][0-9]*|icmp|in(bounds|range|reg)|label|load|local|mul|ne|no(alias|unwind)|(no|sign|zero)ext|non(e|null)|n[su]w|null|opaque|phi|ptr|private|(read|write)only|ret|samesign|[su](div|[gl][et]|rem)|[sz]ext|store|sub|to|trunc|type|un(def|named_addr|reachable)|void)\b"
+# Types.
+color bold,lightwhite "\b([bi][1-9][0-9]*|label|ptr|token|type|void)\b"
+
+# Instructions.
+color bold,lightwhite "\b(add|(addrspace|bit)cast|(addr|int)toptr|alloca|(indirect|call)?br|call|de(clare|fine)|(extract|insert)(element|value)|f(neg|add|sub|mul|div|rem|cmp|ptrunc|pext)|getelementptr|icmp|load|mul|phi|ptrto(addr|int)|ret|[su](div|rem|itofp)|select|[sz]ext|store|sub|switch|trunc|unreachable|xor)\b"
+
+# Constants.
+color bold,lightwhite "\b(inf|false|none|null|opaque|[sq]?nan|true|undef)\b"
+
+# Attributes.
+color bold,lightwhite "\b(align|captures|constant|(ex|in)ternal|eq|global|in(bounds|range|reg)|local|ne|nneg|no(alias|unwind)|(no|sign|zero)ext|nonnull|n[su]w|private|range|(read|write)only|samesign|[su][gl][et]|to|unnamed_addr)\b"
+
 icolor normal,normal "[%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
 
 # Labels.
