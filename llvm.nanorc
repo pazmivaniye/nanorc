@@ -2,7 +2,7 @@ syntax "llvm" "\.ll$"
 comment ";"
 
 # Reserved words.
-color bold,lightwhite "\b(add|align|alloca|br|call|declare|define|double|(ex|in)ternal|(extract|insert)value|eq|float|getelementptr|global|i[1-9][0-9]*|icmp|in(bounds|range)|label|load|local|mul|ne|n[su]w|opaque|phi|ptr|ret|[su](div|[gl][et]|rem)|[sz]ext|store|sub|to|trunc|type|unreachable|void)\b"
+color bold,lightwhite "\b(add|align|alloca|br|call|captures|constant|declare|define|double|(ex|in)ternal|(extract|insert)value|eq|float|getelementptr|global|i[1-9][0-9]*|icmp|in(bounds|range|reg)|label|load|local|mul|ne|no(alias|unwind)|(no|sign|zero)ext|non(e|null)|n[su]w|null|opaque|phi|ptr|private|(read|write)only|ret|samesign|[su](div|[gl][et]|rem)|[sz]ext|store|sub|to|trunc|type|un(def|named_addr|reachable)|void)\b"
 icolor normal,normal "[%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")|^\s*[a-z_.\-][a-z_0-9.\-]*:"
 
 color black,white "[^ -~]"
