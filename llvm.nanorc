@@ -5,15 +5,29 @@ comment ";"
 color bold,lightwhite "\b([bi][1-9][0-9]*|label|ptr|token|type|void)\b"
 
 # Instructions.
-color bold,lightwhite "\b(add|and|(addrspace|bit)cast|(addr|int)toptr|alloca|bit(extract|insert)|(indirect|call)?br|call|de(clare|fine)|(extract|insert)(element|value)|f(neg|add|sub|mul|div|rem|cmp|ptrunc|pext)|getelementptr|icmp|load|mul|x?or|phi|ptrto(addr|int)|ret|[su](div|rem|itofp)|select|[sz]ext|store|sub|switch|trunc|unreachable)\b"
+color bold,lightwhite "\b(add|and|(addrspace|bit)cast|(addr|int)toptr|alloca)\b"
+color bold,lightwhite "\b(bit(extract|insert)|(indirect|call)?br|call)\b"
+color bold,lightwhite "\b(de(clare|fine)|(extract|insert)(element|value))\b"
+color bold,lightwhite "\b(f(neg|add|sub|mul|div|rem|cmp|ptrunc|pext))\b"
+color bold,lightwhite "\b(getelementptr|icmp|load|mul|x?or|phi)\b"
+color bold,lightwhite "\b(ptrto(addr|int)|ret|[su](div|rem|itofp)|select)\b"
+color bold,lightwhite "\b([sz]ext|store|sub|switch|trunc|unreachable)\b"
 
 # Constants.
 color bold,lightwhite "\b(inf|false|none|null|opaque|[sq]?nan|true|undef)\b"
 
 # Attributes.
-color bold,lightwhite "\b(align|captures|constant|disjoint|(ex|in)ternal|eq|global|in(bounds|range|reg)|local|ne|nneg|no(alias|unwind)|(no|sign|zero)ext|nonnull|n[su]w|private|range|(read|write)only|samesign|[su][gl][et]|to|unnamed_addr)\b"
+color bold,lightwhite "\b(align|argmem|attributes|captures|constant)\b"
+color bold,lightwhite "\b(dereferenceable|dis(joint|tinct)|(ex|in)ternal|eq)\b"
+color bold,lightwhite "\b(global|immarg|in(accessiblemem|bounds|range|reg))\b"
+color bold,lightwhite "\b(local|metadata|memory|mustprogress|ne|nneg)\b"
+color bold,lightwhite "\b(no(alias|callback|free|recurse|sync|undef|unwind))\b"
+color bold,lightwhite "\b((no|sign|zero)ext|nonnull|n[su]w|private|range)\b"
+color bold,lightwhite "\b((read|write)(only)?|readwrite|samesign)\b"
+color bold,lightwhite "\b([su][gl][et]|speculatable|tail|to)\b"
+color bold,lightwhite "\b((local_)?unnamed_addr|willreturn)\b"
 
-icolor normal,normal "[%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
+icolor normal,normal "[!%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
 
 # Labels.
 icolor bold,lightwhite "^\s*([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\"):\s*(;.*)?$"
