@@ -3,12 +3,15 @@ header "^cabal-version:"
 comment "--"
 
 # Conditionals.
-color bold,lightwhite "^\s*((el)?if\s|else)$"
-color bold,lightwhite "\b(False|True)\b"
+color bold,lightwhite "^\s*((el)?if\s|else$)"
+icolor bold,lightwhite "\b(false|true)\b"
+color bold,lightwhite "\b(arch|os|impl|flag)\("
+color normal,normal "\("
 
 # Headings.
 icolor bold,lightwhite "^(common|benchmark|executable|flag)\b"
-icolor bold,lightwhite "^((foreign-)?library|test-suite)\b"
+icolor bold,lightwhite "^((foreign-)?library|source-repository(-package)?)\b"
+icolor bold,lightwhite "^test-suite\b"
 icolor bold,lightwhite "^\s*[a-z_][a-z_0-9-]+:(\s|$)"
 
 color black,white "[^ -~]"
