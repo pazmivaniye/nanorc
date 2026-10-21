@@ -1,0 +1,21 @@
+syntax "idris2" "\.idr$"
+comment "--"
+
+# Reserved words.
+color bold,lightwhite "\b(as|auto|case|constructor|covering|data|do|else)\b"
+color bold,lightwhite "\b((public\s+)export|if|import|in(fix[lr]|terface)?)\b"
+color bold,lightwhite "\b(let|module|mutual|namespace|parameters|partial)\b"
+color bold,lightwhite "\b(private|public|then|total|using|where|with)\b"
+color normal,normal "'[a-z]+\b|\b[a-z]+'"
+
+# Pragmas.
+color bold,lightwhite "^\s*%[A-Za-z][A-Za-z_]+\b"
+
+color black,white "[^ -~]"
+
+# Comments.
+color italic,lightblack "\{-\s.*\s-\}"
+color italic,lightblack start="\{-(\s[^\}]*)?$" end="^([^\{]*\s)?-\}"
+color italic,lightblack "--.*"
+
+color ,white "\s+$"

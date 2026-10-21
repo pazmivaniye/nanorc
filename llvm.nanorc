@@ -35,7 +35,7 @@ icolor normal,normal "[!%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
 icolor bold,lightwhite "^\s*([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\"):\s*(;.*)?$"
 
 # Other.
-color bold,lightwhite "^\s*(source_filename|target triple)\b"
+color bold,lightwhite "^\s*(source_filename|target\striple)\b"
 
 color black,white "[^ -~]"
 
