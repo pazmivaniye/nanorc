@@ -2,7 +2,8 @@ syntax "llvm" "\.ll$"
 comment ";"
 
 # Types.
-color bold,lightwhite "\b([bi][1-9][0-9]*|label|ptr|token|type|void)\b"
+color bold,lightwhite "\b([bi][1-9][0-9]*|b?float|fp128|half|label|ppc_fp128)\b"
+color bold,lightwhite "\b(ptr|target|token|type|void|x86_(amx|fp80))\b"
 
 # Instructions.
 color bold,lightwhite "\b(add|and|(addrspace|bit)cast|(addr|int)toptr|alloca)\b"
@@ -14,19 +15,21 @@ color bold,lightwhite "\b(ptrto(addr|int)|ret|[su](div|rem|itofp)|select)\b"
 color bold,lightwhite "\b([sz]ext|store|sub|switch|trunc|unreachable)\b"
 
 # Constants.
-color bold,lightwhite "\b(inf|false|none|null|opaque|[sq]?nan|true|undef)\b"
+color bold,lightwhite "\b(inf|false|none|null|opaque|poison|[sq]?nan|true)\b"
+color bold,lightwhite "\b(undef|zeroinitializer)\b"
 
 # Attributes.
-color bold,lightwhite "\b(align|argmem|attributes|captures|cold|constant)\b"
-color bold,lightwhite "\b(dereferenceable|dis(joint|tinct)|(ex|in)ternal|eq)\b"
-color bold,lightwhite "\b(global|hot|immarg)\b"
-color bold,lightwhite "\bin(accessiblemem|bounds|range|reg)\b"
-color bold,lightwhite "\b(local|metadata|memory|mustprogress|ne|nneg)\b"
-color bold,lightwhite "\bno(alias|callback|free|re(curse|turn)|sync)\b"
+color bold,lightwhite "\b(addrspace|align|argmem|attributes|captures|cold)\b"
+color bold,lightwhite "\b(comdat|constant|core_model|dereferenceable)\b"
+color bold,lightwhite "\b(dis(joint|tinct)|(ex|in)ternal|eq|global|hot)\b"
+color bold,lightwhite "\b(immarg|in(accessiblemem|bounds|range|reg)|local)\b"
+color bold,lightwhite "\b(metadata|memory|mustprogress|ne|nneg)\b"
+color bold,lightwhite "\bno(_sanitize_(hw)?address|alias|callback|free)\b"
+color bold,lightwhite "\bno(re(curse|turn)|sync)\b"
 color bold,lightwhite "\bnoun(def|wind)\b"
-color bold,lightwhite "\b((no|sign|zero)ext|nonnull|n[su]w|private|range)\b"
-color bold,lightwhite "\b((read|write)(only)?|readwrite|samesign)\b"
-color bold,lightwhite "\b([su][gl][et]|speculatable|tail|to)\b"
+color bold,lightwhite "\b((no|sign|zero)ext|nonnull|n[su]w|partition|private)\b"
+color bold,lightwhite "\b(range|(read|write)(only)?|readwrite|samesign)\b"
+color bold,lightwhite "\b(section|[su][gl][et]|speculatable|tail|to)\b"
 color bold,lightwhite "\b((local_)?unnamed_addr|willreturn)\b"
 
 icolor normal,normal "[!%@]([a-z_.\-][a-z_0-9.\-]*|\"[^\"]*\")"
