@@ -7,7 +7,7 @@ icolor bold,lightwhite "\\([a-z%@]+|[[\"~'^`#=.!|;,:]|\])"
 color bold,lightwhite "\\left[([<|.]|\\middle[|.]|\\right([)>|.]|\])"
 icolor normal,normal "\\\\([a-z%@]+|[[\"~'^`#=.!|;,:]|\])"
 icolor normal,normal "\\[_%&${}#][a-z_0-9]+"
-color bold,lightwhite "\\\\\*?"
+color bold,lightwhite "\\(\\\*)?"
 color bold,lightwhite "\\[_%&${}#]"
 
 color black,white "[^ -~]"
